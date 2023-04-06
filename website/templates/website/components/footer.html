@@ -1,0 +1,45 @@
+{% load static %}
+<div class="container">
+    <footer class="py-5">
+        <div class="row">
+        <div class="col-12 mb-3">
+          <div class="text-center mb-3">
+            <img class="img-fluid" width="150px" src="{{lista_empresa.logotipo.url}}" />
+           </div>
+        </div>
+  
+        <div class="col-12 mb-3 ">
+          <ul class="nav justify-content-center">
+            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link text-muted">Home</a></li>
+            
+          </ul>
+        </div>
+      </div>
+  
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>&copy; 2023 {{lista_empresa.razao_social}}.
+        <ul class="nav justify-content-center">
+            <li class="ms-3"><a class="link-dark btn bi bi-whatsapp" href="https://wa.me/55{{lista_empresa.whatsapp}}"></a></li>
+            <li class="ms-3"><a class="link-dark btn bi bi-instagram" href="{{lista_empresa.link_instagram}}"></a></li>
+            <li class="ms-3"><a class="link-dark btn bi bi-facebook" href="{{lista_empresa.link_facebook}}"></svg></a></li>
+            <li class="ms-3"><a class="link-dark btn bi bi-envelope" href="mailto:{{lista_empresa.email}}"></a></li>
+            <li class="ms-3"><a class="link-dark btn bi bi-google" href="{{lista_empresa.link_saf_google}}"></a></li>
+            {% if user.is_authenticated %}
+                <li class="ms-3 dropup">
+                  <a class="link-dark btn border border-dark bi bi-ui-radios-grid dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Opções</a>
+                  <ul class="dropdown-menu">
+                      <li class="list-group-item list-group-item-action">
+                        <a class="dropdown-item bi bi-ui-radios-grid" href="{% url 'dashboard'%}"> Painel</a>
+                      </li>
+                      <li class="list-group-item list-group-item-action">
+                        <a class="dropdown-item bi bi-arrow-return-right" href="{% url 'logout_action'%}"> Sair</a>
+                      </li>
+                  </ul>
+                </li>
+            {% else %}
+                <li class="ms-3"><a class="link-dark btn border border-dark bi bi-ui-radios-grid" href="{% url 'login_form'%}"> Dashboard</a></li>
+            {% endif %}
+        </ul>
+      </div>
+    </footer>
+  </div>

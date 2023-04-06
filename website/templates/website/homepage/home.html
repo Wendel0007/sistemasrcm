@@ -1,0 +1,344 @@
+{% extends 'website/homepage/base.html' %} 
+{% block title %}{{lista_empresa.razao_social}}{% endblock title %} 
+{% block conteudo %} {% load static %}
+<div
+  id="carouselExampleCaptions"
+  class="carousel slide carousel-fade"
+  data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      {% if lista_empresa.carousel1 %}
+      <img
+        src="{{lista_empresa.carousel1.url}}"
+        class="d-block w-100 img-scale-sm"
+        alt="..." />
+      {% else %}
+      <img
+        src="{% static 'website/img/1920x780_gray.png' %}"
+        class="d-block w-100 img-scale-sm"
+        alt="..." />
+      {% endif %}
+    </div>
+    <div class="carousel-item">
+      {% if lista_empresa.carousel1 %}
+      <img
+        src="{{lista_empresa.carousel2.url}}"
+        class="d-block w-100 img-scale-sm"
+        alt="..." />
+      {% else %}
+      <img
+        src="{% static 'website/img/1920x780_white.png' %}"
+        class="d-block w-100 img-scale-sm"
+        alt="..." />
+      {% endif %}
+    </div>
+    <div class="carousel-item">
+      {% if lista_empresa.carousel1 %}
+      <img
+        src="{{lista_empresa.carousel3.url}}"
+        class="d-block w-100 img-scale-sm"
+        alt="..." />
+      {% else %}
+      <img
+        src="{% static 'website/img/1920x780_black.png' %}"
+        class="d-block w-100 img-scale-sm"
+        alt="..." />
+      {% endif %}
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleCaptions"
+    data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="container my-5">
+  <div class="row row-cols-1">
+    <div class="col text-center my-5">
+      <h1 class="titles">
+        <strong class="titles">ADMINISTRAÇÃO</strong>, <br />DE SISTEMAS
+      </h1>
+      <hr class="text-center" width="50" />
+      <p>
+        A Sitemas RCM conta com diverços tipos de serviços. Desde configuração
+        de Servidores a configuração de equipamentos de rede.
+      </p>
+    </div>
+    <div class="col">
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne">
+              Configuração de Servidores Linux e Servidores Windows.
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Para servidores Linux, a consultoria pode oferecer serviços como
+              instalação e configuração de distribuições de Linux, instalação e
+              configuração de serviços de rede, como Apache, MySQL, PHP,
+              PostgreSQL entre outros, configuração de firewalls e segurança.
+              Para servidores Windows, a consultoria pode oferecer serviços como
+              instalação e configuração de servidores Windows, configuração de
+              serviços de rede, como Active Directory, DHCP, DNS, instalação e
+              configuração de aplicativos, gerenciamento de atualizações,
+              gerenciamento de permissões e segurança, e suporte técnico.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo">
+              Configuração de Rede Ubiquiti
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Este serviço se refere à configuração de dispositivos de rede
+              Ubiquiti, como roteadores, switches e access points. A consultoria
+              pode oferecer serviços como planejamento e implementação de rede,
+              configuração de VLANs, configuração de VPNs, configuração de
+              qualidade de serviço, gerenciamento de segurança, e suporte
+              técnico.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#id4"
+              aria-expanded="false"
+              aria-controls="id4">
+              Configuração/Manuteção Servidores AD
+            </button>
+          </h2>
+          <div
+            id="id4"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Este serviço se refere à configuração e manutenção de servidores
+              Active Directory. A consultoria pode oferecer serviços como
+              instalação e configuração de servidores AD, criação e
+              gerenciamento de usuários e grupos, gerenciamento de permissões,
+              gerenciamento de políticas de grupo, monitoramento e backup.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#id5"
+              aria-expanded="false"
+              aria-controls="id5">
+              Infraestrutura de Redes
+            </button>
+          </h2>
+          <div
+            id="id5"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Este serviço se refere ao planejamento e implementação de
+              infraestrutura de rede, incluindo cabeamento, switches,
+              roteadores, firewalls e outros dispositivos. A consultoria pode
+              oferecer serviços como design e planejamento de rede,
+              implementação e configuração de dispositivos de rede,
+              gerenciamento de segurança, monitoramento e suporte técnico.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#id6"
+              aria-expanded="false"
+              aria-controls="id6">
+              Criação de script para Automatização de Rotinas
+            </button>
+          </h2>
+          <div
+            id="id6"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Este serviço se refere à criação de scripts para automatizar
+              tarefas rotineiras de administração de sistemas. A consultoria
+              pode oferecer serviços como análise de processos e tarefas a serem
+              automatizadas, design e desenvolvimento de scripts personalizados,
+              teste e implementação de scripts, e suporte técnico.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#id7"
+              aria-expanded="false"
+              aria-controls="id7">
+              Configuração e Manutenção de Banco de dados Postgresql
+            </button>
+          </h2>
+          <div
+            id="id7"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Este serviço se refere à configuração e manutenção de bancos de
+              dados PostgreSQL. A consultoria pode oferecer serviços como
+              instalação e configuração de bancos de dados PostgreSQL,
+              gerenciamento de backups, gerenciamento de permissões e segurança,
+              otimização de desempenho, migração de dados e suporte técnico.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#id8"
+              aria-expanded="false"
+              aria-controls="id8">
+              Gerenciamento de Infraestrutura e Servidores Cloud
+            </button>
+          </h2>
+          <div
+            id="id8"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Este serviço se refere ao gerenciamento de infraestrutura e
+              servidores em nuvem. A consultoria pode oferecer serviços como
+              planejamento e implementação de infraestrutura em nuvem,
+              configuração e gerenciamento de servidores em nuvem, gerenciamento
+              de segurança, monitoramento e suporte técnico.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#id9"
+              aria-expanded="false"
+              aria-controls="id9">
+              Configuração de Maquinas Samba
+            </button>
+          </h2>
+          <div
+            id="id9"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Este serviço se refere à configuração do serviço de
+              compartilhamento de arquivos e impressoras Samba, que é amplamente
+              utilizado em redes baseadas em sistemas operacionais Linux e Unix.
+              Um site de consultoria poderia especificar quais são as versões do
+              Samba que são suportadas, quais são os principais recursos que
+              podem ser configurados, como autenticação de usuários, controle de
+              acesso a pastas e arquivos, integração com Active Directory, entre
+              outros. Também seria interessante mencionar quais são as
+              modalidades de suporte oferecidas, bem como as garantias de
+              desempenho e disponibilidade do serviço.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#id10"
+              aria-expanded="false"
+              aria-controls="id10">
+              Criação de monitoramento com Maquinas Zabbix e The Dude
+            </button>
+          </h2>
+          <div
+            id="id10"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Este serviço se refere à criação e configuração de sistemas de
+              monitoramento de redes e servidores, utilizando ferramentas como
+              Zabbix e The Dude. Um site de consultoria poderia especificar
+              quais são as versões dessas ferramentas que são suportadas, quais
+              são os principais recursos que podem ser configurados, como
+              alertas de falhas, monitoramento de tráfego de rede, análise de
+              desempenho de servidores, entre outros. Também seria interessante
+              mencionar quais são as modalidades de suporte oferecidas, bem como
+              as garantias de desempenho e disponibilidade do serviço.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+{% endblock conteudo %}

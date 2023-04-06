@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 576px) {
+  .img-scale-sm {
+    transform: scale(1.2);
+  }
+}
+.img-card:hover{
+  transform: scale(1.02);
+  transition-duration: 0.5s;
+  
+  transition: 0.5s;
+}
+.description{
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+.description:hover{
+  opacity: 0.7;
+  background-color: #fff;
+  transition-duration: 0.5s;
+}
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: green;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+.whatsapp-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff;
+}
+.whatsapp-button i {
+  margin-right: 5px;
+}
